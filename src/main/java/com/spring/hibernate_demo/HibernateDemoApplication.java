@@ -54,6 +54,12 @@ public class HibernateDemoApplication {
 		};
 	}
 
+	/**
+     	* Deletes all student records from the database 
+	and logs the number of affected rows.
+	*
+	* @param studentDao the DAO used to execute bulk deletion
+	*/
 	private void deleteAllStudents(StudentDao studentDao) {
 		System.out.println("Deleting all student information...");
 		int rowsDeleted = studentDao.deleteAll();
@@ -61,6 +67,12 @@ public class HibernateDemoApplication {
 
 	}
 
+	/**
+	 * Deletes a specific student entity identified 
+	 * by hardcoded primary key ID.
+	 *
+	 * @param studentDao the DAO used to perform deletion
+	 */
 	private void deleteStudent(StudentDao studentDao) {
 		int id = 4;
 		System.out.println("Delete ID: " + id);
@@ -69,6 +81,12 @@ public class HibernateDemoApplication {
 		studentDao.delete(id);
 	}
 
+	/**
+	 * Fetches a student by ID, modifies its first name, 
+	 * and saves updates to the database.
+	 *
+	 * @param studentDao the DAO used to fetch and update the entity
+	 */
 	private void updateStudent(StudentDao studentDao) {
 		// retrieve student from id
 		int id = 1;
@@ -87,6 +105,12 @@ public class HibernateDemoApplication {
 
 	}
 
+	/**
+	 * Searches for students matching a specific last name 
+	 * and prints the results.
+	 *
+	 * @param studentDao the DAO used to query entities by last name
+	 */
 	private void queryStudentLastName(StudentDao studentDao) {
 		// get list of students
 		List<Student> students = studentDao.findByLastName("Zeppeli");
@@ -98,6 +122,12 @@ public class HibernateDemoApplication {
 
 	}
 
+	/**
+	 * Retrieves all student records stored in the database 
+	 * and prints them to the console.
+	 *
+	 * @param studentDao the DAO used to fetch all entities
+	 */
 	private void queryStudents(StudentDao studentDao) {
 		// get list of students
 		List<Student> students = studentDao.findAll();
@@ -108,6 +138,12 @@ public class HibernateDemoApplication {
 		}
 	}
 
+	/**
+	 * Finds a single student record by primary key ID 
+	 * and prints its details.
+	 *
+	 * @param studentDao the DAO used to look up the student
+	 */
 	private void readStudent(StudentDao studentDao) {
 		// retrieve student from id
 		System.out.println("Retrieving student id 2...");
@@ -117,12 +153,18 @@ public class HibernateDemoApplication {
 		System.out.println("Found student: " + student);
 	}
 
+	/**
+	 * Instantiates a new {@link Student} object, 
+	 * persists it using the DAO, and logs the generated primary key.
+	 *
+	 * @param studentDao the DAO used to persist the student
+	 */
 	private void createStudent(StudentDao studentDao) {
 		// create student obj
 		System.out.println("Creating student information...");
 		Student student = new Student("Josuke",
-										"Higashikata",
-										"josuke.higashikata@jjba.com");
+			"Higashikata",
+			"josuke.higashikata@jjba.com");
 
 		// save student obj to database
 		System.out.println("Saving student information...");

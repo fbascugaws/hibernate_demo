@@ -1,14 +1,11 @@
 package com.spring.hibernate_demo.dao;
 
-import java.util.List;
-
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.spring.hibernate_demo.entity.Student;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
+import java.util.List;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * StudentDaoImplement

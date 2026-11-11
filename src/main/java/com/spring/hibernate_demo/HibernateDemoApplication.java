@@ -1,14 +1,13 @@
 package com.spring.hibernate_demo;
 
+import com.spring.hibernate_demo.dao.StudentDao;
+import com.spring.hibernate_demo.entity.Student;
 import java.util.List;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import com.spring.hibernate_demo.dao.StudentDao;
-import com.spring.hibernate_demo.entity.Student;
 
 /**
  * HibernateDemoApplication

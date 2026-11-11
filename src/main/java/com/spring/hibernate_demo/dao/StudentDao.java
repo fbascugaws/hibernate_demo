@@ -1,9 +1,7 @@
 package com.spring.hibernate_demo.dao;
 
-import java.util.List;
-
 import com.spring.hibernate_demo.entity.Student;
-
+import java.util.List;
 
 /**
  * StudentDao

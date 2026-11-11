@@ -1,6 +1,7 @@
 package com.spring.hibernate_demo;
 
 import java.util.List;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,13 +10,38 @@ import org.springframework.context.annotation.Bean;
 import com.spring.hibernate_demo.dao.StudentDao;
 import com.spring.hibernate_demo.entity.Student;
 
+/**
+ * HibernateDemoApplication
+ * Main Spring Boot application class for executing 
+ * Hibernate/JPA CRUD operations.
+ * <p>
+ * Demonstrates creation, retrieval, updating, and deletion of 
+ * {@link Student} entities using a command-line runner bean.
+ * </p>
+ *
+ * @author Felisa Bascug
+ */
 @SpringBootApplication
 public class HibernateDemoApplication {
 
+	/**
+	 * Main entry point of the Spring Boot application.
+	 *
+	 * @param args command-line arguments passed during execution
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(HibernateDemoApplication.class, args);
 	}
 
+	/**
+	 * Configures a {@link CommandLineRunner} bean executed upon 
+	 * application launch.
+	 *
+	 * @param studentDao the data access object for performing 
+	 * 			{@link Student} CRUD operations
+	 * @return a lambda expression containing execution calls 
+	 * 		to demonstrate DAO methods
+	 */
 	@Bean
 	CommandLineRunner commandLineRunner(StudentDao studentDao) {
 		return runner -> {
